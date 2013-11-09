@@ -57,7 +57,18 @@ github "xquartz",    "1.1.0"
 # https://github.com/boxen.
 
 ## for kibitan using
+github "osx", "2.0.0"
+
 github "chrome",     "1.1.2"
 github "iterm2",     "1.0.3"
 github "sublime_text_2", "1.1.2"
 
+github "dropbox", "1.1.2"
+github "evernote", "2.0.4"
+github "skype", "1.0.6"
+github "keyremap4macbook", "1.0.8"
+
+github "istatmenus3", "1.0.1"
+
+github "pow", "1.0.0"
+github "clipmenu", "1.0.0"

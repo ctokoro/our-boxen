@@ -1,12 +1,58 @@
+## in MacAPP
+# witch
+# popclip
+# Dash
+
 class people::kibitan {
   include chrome
+
+  include dropbox
+  include evernote
+  include skype
+
+   include keyremap4macbook
+   include keyremap4macbook::login_item
+
+  # enable remapping left control to left control + escape
+  # keyremap4macbook::remap{ 'controlL2controlL_escape': }
+
+  # set the parameter.keyoverlaidmodifier_timeout to 300
+  # keyremap4macbook::set{ 'parameter.keyoverlaidmodifier_timeout':
+  #   value => '300'
+  # }
+
+  # set the contents of the private.xml file.
+  # keyremap4macbook::private_xml{ 'private.xml':
+  #   content => '<some>xml</some>'
+  # }
+  
+  include istatmenus3
+  include clipmenu
+
+  package {
+    'Mou':
+      source   => "http://mouapp.com/download/Mou.zip",
+      provider => compressed_app;
+    'GoogleJapaneseInput':
+      source => "http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
+      provider => pkgdmg;
+  }
   
   # for dev
   include chrome::canary
   include iterm2::stable
-  
   include sublime_text_2
   sublime_text_2::package { 'Emmet':
     source => 'sergeche/emmet-sublime'
   }
+
+  package {
+    [
+      'tmux',
+      'tig',
+    ]:
+  }
+
+  include pow
+
 }
