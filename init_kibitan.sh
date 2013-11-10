@@ -26,6 +26,8 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 ### add config manually
 # .zshrc <<
-# source /opt/boxen/env.sh
 # ZSH_THEME="bira"
 # alias ll="ls -alh"
+# 
+# .zshenv <<
+# source /opt/boxen/env.sh

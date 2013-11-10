@@ -85,4 +85,8 @@ class people::kibitan {
 
   include mysql
   mysql::db { 'mydb': }
+
+  ## See also about port, and rails setting.
+  # https://github.com/boxen/puppet-mysql
+
 }
