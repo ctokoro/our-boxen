@@ -36,6 +36,10 @@ class people::kibitan {
     'GoogleJapaneseInput':
       source => "http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
       provider => pkgdmg;
+    ## file size exploler
+    'Disk Inventory X':
+      source => "http://www.alice-dsl.net/tjark.derlien/DIX1.0Universal.dmg",
+      provider => appdmg;
   }
   
   # for dev
@@ -49,7 +53,6 @@ class people::kibitan {
   exec{ "replace_readline_of_ruby" :
     command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {}",
   }
-
 
   # packages
   include chrome::canary
@@ -70,6 +73,7 @@ class people::kibitan {
       'tmux',
       'tig',
       'wget',
+      'watch',
     ]:
   }
 
