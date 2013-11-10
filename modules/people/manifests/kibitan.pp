@@ -39,6 +39,19 @@ class people::kibitan {
   }
   
   # for dev
+  ## for ruby readline
+  package {
+    [
+      'readline',
+    ]:
+  }
+
+  exec{ "replace_readline_of_ruby" :
+    command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {}",
+  }
+
+
+  # packages
   include chrome::canary
   include iterm2::stable
   include sublime_text_2
@@ -56,6 +69,7 @@ class people::kibitan {
     [
       'tmux',
       'tig',
+      'wget',
     ]:
   }
 
@@ -64,7 +78,7 @@ class people::kibitan {
   include imagemagick
   include memcached
   include sequel_pro
-  
+
   include mysql
   mysql::db { 'mydb': }
 }
