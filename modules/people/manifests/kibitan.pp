@@ -74,10 +74,10 @@ class people::kibitan {
       'tig',
       'wget',
       'watch',
+      'tree',
     ]:
   }
 
-  include pow
   include sourcetree
   include imagemagick
   include memcached

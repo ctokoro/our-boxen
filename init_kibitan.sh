@@ -18,6 +18,9 @@ git config --global push.default simple
 ## rbenv
 rbenv global 2.0.0
 
+## pow
+curl get.pow.cx | sh
+
 ## ohmyzsh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 

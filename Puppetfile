@@ -70,7 +70,6 @@ github "keyremap4macbook", "1.0.8"
 
 github "istatmenus3", "1.0.1"
 
-github "pow", "1.0.0"
 github "clipmenu", "1.0.0"
 
 github "sourcetree",    "0.0.2"
