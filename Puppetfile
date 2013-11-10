@@ -72,3 +72,9 @@ github "istatmenus3", "1.0.1"
 
 github "pow", "1.0.0"
 github "clipmenu", "1.0.0"
+
+github "sourcetree",    "0.0.2"
+github "imagemagick", "1.2.1"
+github "memcached", "1.3.0"
+github "sequel_pro",  "1.0.0"
+github "mysql", "1.1.5"

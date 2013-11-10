@@ -46,6 +46,12 @@ class people::kibitan {
     source => 'sergeche/emmet-sublime'
   }
 
+   package {
+    'Kobito':
+      source   => "http://kobito.qiita.com/download/Kobito_v1.8.2.zip",
+      provider => compressed_app;
+  }
+
   package {
     [
       'tmux',
@@ -54,5 +60,11 @@ class people::kibitan {
   }
 
   include pow
-
+  include sourcetree
+  include imagemagick
+  include memcached
+  include sequel_pro
+  
+  include mysql
+  mysql::db { 'mydb': }
 }
