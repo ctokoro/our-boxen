@@ -2,6 +2,10 @@
 # witch
 # popclip
 # Dash
+# line
+# iphoto
+# imovie
+
 
 class people::kibitan {
   include chrome
@@ -81,6 +85,7 @@ class people::kibitan {
   include sourcetree
   include imagemagick
   include memcached
+  # include memcached::lib # it cause error now in marverics. 2013/11/11
   include sequel_pro
 
   include mysql
