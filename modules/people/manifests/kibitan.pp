@@ -5,7 +5,7 @@
 # line
 # iphoto
 # imovie
-
+# janetter
 
 class people::kibitan {
   include chrome
@@ -87,6 +87,7 @@ class people::kibitan {
   include memcached
   # include memcached::lib # it cause error now in marverics. 2013/11/11
   include sequel_pro
+  include cyberduck
 
   include mysql
   mysql::db { 'mydb': }
