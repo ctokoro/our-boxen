@@ -54,9 +54,10 @@ class people::kibitan {
     ]:
   }
 
-  exec{ "replace_readline_of_ruby" :
-    command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {}",
-  }
+  ## it need only once.
+  #exec{ "replace_readline_of_ruby" :
+  #  command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {}",
+  #}
 
   # packages
   include chrome::canary
@@ -95,4 +96,6 @@ class people::kibitan {
   ## See also about port, and rails setting.
   # https://github.com/boxen/puppet-mysql
 
+  include vagrant
+  include virtualbox
 }

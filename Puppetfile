@@ -78,3 +78,5 @@ github "memcached", "1.3.0"
 github "sequel_pro",  "1.0.0"
 github "mysql", "1.1.5"
 github "cyberduck", '1.0.1'
+github 'vagrant', '3.0.0'
+github 'virtualbox', '1.0.9'
