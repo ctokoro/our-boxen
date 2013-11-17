@@ -54,18 +54,23 @@ class people::kibitan {
     ]:
   }
 
-  ## it need only once.
-  #exec{ "replace_readline_of_ruby" :
-  #  command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {}",
-  #}
+  # readlineの接続先直す | iii ThreeTreesLight
+  # http://threetreeslight.com/post/58786169382/readline
+  exec{ "replace_readline_of_ruby" :
+   command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {} \\;",
+  }
+  
+  exec{ "set rbenv global 2.0.0" :
+   command => "rbenv global 2.0.0",
+  }
 
   # packages
   include chrome::canary
   include iterm2::stable
   include sublime_text_2
-  sublime_text_2::package { 'Emmet':
-    source => 'sergeche/emmet-sublime'
-  }
+  # sublime_text_2::package { 'Emmet':
+  #   source => 'sergeche/emmet-sublime'
+  # }
 
    package {
     'Kobito':
