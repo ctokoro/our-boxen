@@ -14,8 +14,8 @@ class people::kibitan {
   include evernote
   include skype
 
-   include keyremap4macbook
-   include keyremap4macbook::login_item
+  include keyremap4macbook
+  include keyremap4macbook::login_item
 
   # enable remapping left control to left control + escape
   # keyremap4macbook::remap{ 'controlL2controlL_escape': }
@@ -72,7 +72,7 @@ class people::kibitan {
   #   source => 'sergeche/emmet-sublime'
   # }
 
-   package {
+  package {
     'Kobito':
       source   => "http://kobito.qiita.com/download/Kobito_v1.8.2.zip",
       provider => compressed_app;
@@ -103,4 +103,15 @@ class people::kibitan {
 
   include vagrant
   include virtualbox
+
+  ## install programming font 'Ricty'
+  homebrew::tap { 'sanemat/font': }
+  package { 'ricty': }
+
+  info "--it needs by yourself"
+  info "cp -f /opt/boxen/homebrew/Cellar/ricty/3.2.2/share/fonts/Ricty*.ttf ~/Library/Fonts/"
+  info "fc-cache -vf;"
+  # exec { "setup ricty":
+  #   command => "cp -f /opt/boxen/homebrew/Cellar/ricty/3.2.2/share/fonts/Ricty*.ttf ~/Library/Fonts/; fc-cache -vf;"
+  # }
 }
