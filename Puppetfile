@@ -78,6 +78,43 @@ github "memcached", "1.3.0"
 github "sequel_pro",  "1.0.0"
 github "mysql", "1.1.5"
 github "cyberduck", '1.0.1'
+github 'pow', '1.0.0'
+
+## github git command wrapper
+# github 'gh'
+github 'alfred', '1.1.7'
+github 'libreoffice', '4.1.3'
+github 'shortcat', '1.0.6'
+
+## javascript IDE
+# github 'webstorm'
+## vpn manager
+# github 'tunnelblick'
+## for front IDE
+# github 'codekit'
+
+## GTD tool
+github 'things', '1.0.1'
+
+## devops
+github 'packer', '1.1.0'
 github 'vagrant', '3.0.0'
 github 'virtualbox', '1.0.9'
-github 'pow', '1.0.0'
+
+## mac tracking app
+# github 'undercover'
+
+## html2pdf
+# github 'wkhtmltopdf'
+
+## process checker?
+# github 'foreman'
+
+## famouse gaem
+# github 'minecraft'
+
+## generate capturing GIF
+github 'licecap', '1.0.0'
+
+## for display brightness controller
+github 'flux', '1.0.0'

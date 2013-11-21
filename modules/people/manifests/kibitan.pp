@@ -32,6 +32,18 @@ class people::kibitan {
   
   include istatmenus3
   include clipmenu
+  
+  include alfred
+  include libreoffice
+  include libreoffice::languagepack
+  class { 'libreoffice::languagepack':
+    locale => 'ja'
+  }
+
+  include things
+  include shortcat
+  include licecap
+  include flux
 
   package {
     'Mou':
@@ -45,7 +57,7 @@ class people::kibitan {
       source => "http://www.alice-dsl.net/tjark.derlien/DIX1.0Universal.dmg",
       provider => appdmg;
   }
-  
+
   # for dev
   ## for ruby readline
   package {
@@ -107,6 +119,7 @@ class people::kibitan {
 
   include vagrant
   include virtualbox
+  include packer
 
   ## install programming font 'Ricty'
   homebrew::tap { 'sanemat/font': }
