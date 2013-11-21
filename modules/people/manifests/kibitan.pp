@@ -76,6 +76,10 @@ class people::kibitan {
     'Kobito':
       source   => "http://kobito.qiita.com/download/Kobito_v1.8.2.zip",
       provider => compressed_app;
+    'SQLite Database Browser':
+      source   => "http://downloads.sourceforge.net/project/sqlitebrowser/sqlitebrowser/2.0%20beta1/sqlitebrowser_200_b1_osx.zip",
+      provider => compressed_app;
+    ## or using lita http://www.dehats.com/drupal/?q=node/58
   }
 
   package {
