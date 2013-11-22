@@ -34,16 +34,16 @@ class people::kibitan {
   include clipmenu
   
   include alfred
-  include libreoffice
-  include libreoffice::languagepack
-  class { 'libreoffice::languagepack':
-    locale => 'ja'
-  }
+  # include libreoffice
+  # include libreoffice::languagepack
+  # class { 'libreoffice::languagepack':
+  #   locale => 'ja'
+  # }
 
-  include things
-  include shortcat
-  include licecap
-  include flux
+  # include things
+  # include shortcat
+  # include licecap
+  # include flux
 
   package {
     'Mou':
@@ -104,6 +104,10 @@ class people::kibitan {
     ]:
   }
 
+  nodejs::module { 'ungit':
+    node_version => 'v0.10'
+  }
+
   include sourcetree
   include imagemagick
   include memcached
@@ -119,7 +123,7 @@ class people::kibitan {
 
   include vagrant
   include virtualbox
-  include packer
+  # include packer
 
   ## install programming font 'Ricty'
   homebrew::tap { 'sanemat/font': }
