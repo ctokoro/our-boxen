@@ -107,6 +107,9 @@ class people::kibitan {
   nodejs::module { 'ungit':
     node_version => 'v0.10'
   }
+  nodejs::module { 'bower':
+    node_version => 'v0.10'
+  }
 
   include sourcetree
   include imagemagick
