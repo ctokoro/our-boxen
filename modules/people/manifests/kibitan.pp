@@ -7,6 +7,9 @@
 # imovie
 # janetter
 
+## idont know how to install in boxen
+# lita (sqlite GUI) - its adobe AIR program
+
 class people::kibitan {
   include chrome
 
@@ -56,6 +59,9 @@ class people::kibitan {
     'Disk Inventory X':
       source => "http://www.alice-dsl.net/tjark.derlien/DIX1.0Universal.dmg",
       provider => appdmg;
+    'MysqlWorkbench':
+      source => "http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.0.8-osx-i686.dmg",
+      provider => appdmg;
   }
 
   # for dev
@@ -103,6 +109,21 @@ class people::kibitan {
       'tree',
     ]:
   }
+
+  # rbenv::plugin::rbenvvars { "kibitan":
+  # # Optional:
+  # # source => "git://path-to-your/custom/rbenv-vars.git"
+  # }
+
+  # rbenv::plugin { "rbenv-binstubs":
+  #   user   => "kibitan",
+  #   source => "git://github.com/ianheggie/rbenv-binstubs.git"
+  # }
+
+  exec{ "install rbenv-binstubs plugin" :
+   command => "mkdir -p $BOXEN_HOME/rbenv/plugins; cd $BOXEN_HOME/rbenv/plugins; git clone https://github.com/ianheggie/rbenv-binstubs.git",
+  }
+
 
   nodejs::module { 'ungit':
     node_version => 'v0.10'

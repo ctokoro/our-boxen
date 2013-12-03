@@ -118,3 +118,6 @@ github 'licecap', '1.0.0'
 
 ## for display brightness controller
 github 'flux', '1.0.0'
+
+## for rbenv plugin etc
+# github 'rbenv', '0.2.0'
