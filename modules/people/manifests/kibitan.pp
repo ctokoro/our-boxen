@@ -98,6 +98,9 @@ class people::kibitan {
       source   => "http://downloads.sourceforge.net/project/sqlitebrowser/sqlitebrowser/2.0%20beta1/sqlitebrowser_200_b1_osx.zip",
       provider => compressed_app;
     ## or using lita http://www.dehats.com/drupal/?q=node/58
+    # 'nitrous.io':
+    #   source   => "https://www.nitrous.io/mac/Nitrous-Mac-Latest.zip"
+    #   provider => compressed_app;
   }
 
   package {
@@ -129,6 +132,9 @@ class people::kibitan {
     node_version => 'v0.10'
   }
   nodejs::module { 'bower':
+    node_version => 'v0.10'
+  }
+  nodejs::module { 'grunt-cli':
     node_version => 'v0.10'
   }
 
