@@ -19,26 +19,12 @@ class people::kibitan {
 
   include keyremap4macbook
   include keyremap4macbook::login_item
-
-  # enable remapping left control to left control + escape
-  # keyremap4macbook::remap{ 'controlL2controlL_escape': }
-
-  # set the parameter.keyoverlaidmodifier_timeout to 300
-  # keyremap4macbook::set{ 'parameter.keyoverlaidmodifier_timeout':
-  #   value => '300'
-  # }
-
-  # set the contents of the private.xml file.
-  # keyremap4macbook::private_xml{ 'private.xml':
-  #   content => '<some>xml</some>'
-  # }
   
   include istatmenus3
   include clipmenu
   
   include alfred
   # include libreoffice
-  # include libreoffice::languagepack
   # class { 'libreoffice::languagepack':
   #   locale => 'ja'
   # }
@@ -64,24 +50,7 @@ class people::kibitan {
       provider => appdmg;
   }
 
-  # for dev
-  ## for ruby readline
-  package {
-    [
-      'readline',
-    ]:
-  }
-
-  # readlineの接続先直す | iii ThreeTreesLight
-  # http://threetreeslight.com/post/58786169382/readline
-  exec{ "replace_readline_of_ruby" :
-   command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {} \\;",
-  }
-  
-  exec{ "set rbenv global 2.0.0" :
-   command => "rbenv global 2.0.0",
-  }
-
+  # for dev  
   # packages
   include chrome::canary
   include iterm2::stable
@@ -101,6 +70,9 @@ class people::kibitan {
     # 'nitrous.io':
     #   source   => "https://www.nitrous.io/mac/Nitrous-Mac-Latest.zip"
     #   provider => compressed_app;
+    'hoster':
+      source  => "http://www.redwinder.com/macapp/hoster/tmp/Hoster1.208.zip",
+      provider => compressed_pkg;
   }
 
   package {
@@ -110,23 +82,20 @@ class people::kibitan {
       'wget',
       'watch',
       'tree',
+      'colordiff',
+      'jq',
     ]:
   }
 
-  # rbenv::plugin::rbenvvars { "kibitan":
-  # # Optional:
-  # # source => "git://path-to-your/custom/rbenv-vars.git"
-  # }
-
-  # rbenv::plugin { "rbenv-binstubs":
-  #   user   => "kibitan",
-  #   source => "git://github.com/ianheggie/rbenv-binstubs.git"
-  # }
-
-  exec{ "install rbenv-binstubs plugin" :
-   command => "mkdir -p $BOXEN_HOME/rbenv/plugins; cd $BOXEN_HOME/rbenv/plugins; git clone https://github.com/ianheggie/rbenv-binstubs.git",
+  ruby::plugin { "rbenv-binstubs":
+    ensure => '1.3',
+    source => "ianheggie/rbenv-binstubs"
   }
 
+  ruby::plugin { 'rbenv-vars':
+    ensure => 'v1.2.0',
+    source  => 'sstephenson/rbenv-vars'
+  }
 
   nodejs::module { 'ungit':
     node_version => 'v0.10'

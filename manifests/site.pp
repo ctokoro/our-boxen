@@ -81,6 +81,24 @@ node default {
   #include ruby::1_9_3
   include ruby::2_0_0
 
+  ## for ruby readline
+  package {
+    [
+      'readline',
+    ]:
+  }
+
+  # readlineの接続先直す | iii ThreeTreesLight
+  # http://threetreeslight.com/post/58786169382/readline
+  exec{ "replace_readline_of_ruby" :
+   command => "find /opt/boxen/rbenv -name readline.bundle -exec install_name_tool -change /usr/lib/libedit.3.dylib `find /opt/boxen -name libreadline.dylib` {} \\;",
+  }
+  
+  # set ruby global version
+  class { 'ruby::global':
+    version => '2.0.0'
+  }
+
   # common, useful packages
   package {
     [
