@@ -45,8 +45,8 @@ class people::kibitan {
     'Disk Inventory X':
       source => "http://www.alice-dsl.net/tjark.derlien/DIX1.0Universal.dmg",
       provider => appdmg;
-    'MysqlWorkbench':
-      source => "http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.0.8-osx-i686.dmg",
+    'VLC media player':
+      source => "http://free.nchc.org.tw/vlc/vlc/2.1.2/macosx/vlc-2.1.2.dmg",
       provider => appdmg;
   }
 
@@ -73,6 +73,9 @@ class people::kibitan {
     'hoster':
       source  => "http://www.redwinder.com/macapp/hoster/tmp/Hoster1.208.zip",
       provider => compressed_pkg;
+    'MysqlWorkbench':
+      source => "http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.0.8-osx-i686.dmg",
+      provider => appdmg;
   }
 
   package {
