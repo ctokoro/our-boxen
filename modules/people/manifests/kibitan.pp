@@ -87,6 +87,7 @@ class people::kibitan {
       'tree',
       'colordiff',
       'jq',
+      'phantomjs',
     ]:
   }
 
