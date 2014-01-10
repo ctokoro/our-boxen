@@ -48,6 +48,9 @@ class people::kibitan {
     'VLC media player':
       source => "http://free.nchc.org.tw/vlc/vlc/2.1.2/macosx/vlc-2.1.2.dmg",
       provider => appdmg;
+    'Mac Linux USB Loader':
+      source => "http://sevenbits.github.com/downloads/Mac-Linux-USB-Loader.zip",
+      provider => compressed_app;
   }
 
   # for dev  
@@ -88,27 +91,30 @@ class people::kibitan {
       'colordiff',
       'jq',
       'phantomjs',
+      'source-highlight',
     ]:
   }
 
-  ruby::plugin { "rbenv-binstubs":
+  ruby::plugin {
+    "rbenv-binstubs":
     ensure => '1.3',
-    source => "ianheggie/rbenv-binstubs"
-  }
-
-  ruby::plugin { 'rbenv-vars':
+    source => "ianheggie/rbenv-binstubs";
+    'rbenv-vars':
     ensure => 'v1.2.0',
-    source  => 'sstephenson/rbenv-vars'
+    source  => 'sstephenson/rbenv-vars';
   }
 
-  nodejs::module { 'ungit':
-    node_version => 'v0.10'
-  }
-  nodejs::module { 'bower':
-    node_version => 'v0.10'
-  }
-  nodejs::module { 'grunt-cli':
-    node_version => 'v0.10'
+  nodejs::module {
+    'ungit':
+    node_version => 'v0.10';
+    'bower':
+    node_version => 'v0.10';
+    'grunt-cli':
+    node_version => 'v0.10';
+    'hubot':
+    node_version => 'v0.10';
+    'coffee-script':
+    node_version => 'v0.10';
   }
 
   include sourcetree
@@ -123,6 +129,10 @@ class people::kibitan {
 
   ## See also about port, and rails setting.
   # https://github.com/boxen/puppet-mysql
+
+  include redis
+  ## See also about port, and ruby, hubot setting.
+  # https://github.com/boxen/puppet-redis
 
   include vagrant
   include virtualbox
