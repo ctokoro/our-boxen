@@ -79,6 +79,9 @@ class people::kibitan {
     'MysqlWorkbench':
       source => "http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.0.8-osx-i686.dmg",
       provider => appdmg;
+    'GitX':
+      source  => "http://frim.frim.nl/GitXStable.app.zip",
+      provider => compressed_app;
   }
 
   package {
@@ -114,6 +117,13 @@ class people::kibitan {
     'hubot':
     node_version => 'v0.10';
     'coffee-script':
+    node_version => 'v0.10';
+    # 'devtools-terminal':
+    # node_version => 'v0.10';
+    ## not working well in boxen.. use it in terminal
+    # npm install -g devtools-terminal
+    # sudo devtools-terminal --install --id=leakmhneaibbdapdoienlkifomjceknl
+    'myth':
     node_version => 'v0.10';
   }
 
