@@ -80,6 +80,7 @@ github "mysql", "1.1.5"
 github "redis", "2.1.0"
 github "cyberduck", '1.0.1'
 github 'pow', '1.0.0'
+github 'python', '1.3.0'
 
 ## github git command wrapper
 # github 'gh'

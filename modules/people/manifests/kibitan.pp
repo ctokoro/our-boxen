@@ -58,6 +58,7 @@ class people::kibitan {
   include chrome::canary
   include iterm2::stable
   include sublime_text_2
+
   # sublime_text_2::package { 'Emmet':
   #   source => 'sergeche/emmet-sublime'
   # }
@@ -70,9 +71,9 @@ class people::kibitan {
       source   => "http://downloads.sourceforge.net/project/sqlitebrowser/sqlitebrowser/2.0%20beta1/sqlitebrowser_200_b1_osx.zip",
       provider => compressed_app;
     ## or using lita http://www.dehats.com/drupal/?q=node/58
-    # 'nitrous.io':
-    #   source   => "https://www.nitrous.io/mac/Nitrous-Mac-Latest.zip"
-    #   provider => compressed_app;
+    'nitrous.io':
+      source   => "https://www.nitrous.io/mac/Nitrous-Mac-Latest.zip",
+      provider => compressed_app;
     'hoster':
       source  => "http://www.redwinder.com/macapp/hoster/tmp/Hoster1.208.zip",
       provider => compressed_pkg;
@@ -83,6 +84,9 @@ class people::kibitan {
       source  => "http://frim.frim.nl/GitXStable.app.zip",
       provider => compressed_app;
   }
+
+  # https://github.com/phinze/homebrew-cask
+  homebrew::tap { 'phinze/cask': }
 
   package {
     [
@@ -95,37 +99,49 @@ class people::kibitan {
       'jq',
       'phantomjs',
       'source-highlight',
+      'brew-cask',
+      'autossh',
     ]:
   }
 
   ruby::plugin {
     "rbenv-binstubs":
-    ensure => '1.3',
-    source => "ianheggie/rbenv-binstubs";
+      ensure => '1.3',
+      source => "ianheggie/rbenv-binstubs";
     'rbenv-vars':
-    ensure => 'v1.2.0',
-    source  => 'sstephenson/rbenv-vars';
+      ensure => 'v1.2.0',
+      source  => 'sstephenson/rbenv-vars';
   }
 
   nodejs::module {
     'ungit':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
     'bower':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
     'grunt-cli':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
     'hubot':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
     'coffee-script':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
     # 'devtools-terminal':
     # node_version => 'v0.10';
     ## not working well in boxen.. use it in terminal
     # npm install -g devtools-terminal
     # sudo devtools-terminal --install --id=leakmhneaibbdapdoienlkifomjceknl
     'myth':
-    node_version => 'v0.10';
+      node_version => 'v0.10';
   }
+
+  # http://baqamore.hatenablog.com/entry/2013/12/21/234623
+  # https://github.com/boxen/puppet-python/blob/1.3.0/manifests/pip.pp
+  # python::pip {
+  #   # TODO: Glances needs /usr/local/etc dir.(but it require root permittion).
+  #   #  how to install it??
+  #   'Glances':
+  #     virtualenv => $homebrew::config::installdir,
+  #     ensure => present;
+  # }
 
   include sourcetree
   include imagemagick

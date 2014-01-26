@@ -99,6 +99,19 @@ node default {
     version => '2.0.0'
   }
 
+  # python
+  # http://baqamore.hatenablog.com/entry/2013/12/21/234623
+  include python
+  include python::virtualenvwrapper
+
+  # https://github.com/boxen/puppet-python/blob/1.3.0/manifests/mkvirtualenv.pp
+  # python::mkvirtualenv{ 'global':
+  #   ensure      => present,
+  #   systempkgs  => true,
+  #   distribute  => true,
+  #   project_dir => "$BOXEN_HOME/pyenv/"
+  # }
+
   # common, useful packages
   package {
     [
