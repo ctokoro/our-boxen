@@ -23,7 +23,7 @@ class people::kibitan {
   include istatmenus3
   include clipmenu
   
-  include alfred
+  # include alfred
   # include libreoffice
   # class { 'libreoffice::languagepack':
   #   locale => 'ja'
@@ -34,6 +34,7 @@ class people::kibitan {
   # include licecap
   # include flux
 
+  # https://github.com/boxen/puppet-boxen/tree/master/lib/puppet/provider/package
   package {
     'Mou':
       source   => "http://mouapp.com/download/Mou.zip",
@@ -51,6 +52,10 @@ class people::kibitan {
     'Mac Linux USB Loader':
       source => "http://sevenbits.github.com/downloads/Mac-Linux-USB-Loader.zip",
       provider => compressed_app;
+    ## なんかエラる。。
+    # 'Send to Kindle':
+    #   source => 'http://s3.amazonaws.com/sendtokindle/SendToKindleForMac-installer-v1.0.0.218.pkg',
+    #   provider => pkgdmg;
   }
 
   # for dev  
@@ -101,6 +106,7 @@ class people::kibitan {
       'source-highlight',
       'brew-cask',
       'autossh',
+      'terminal-notifier',
     ]:
   }
 
@@ -174,4 +180,8 @@ class people::kibitan {
   # exec { "setup ricty":
   #   command => "cp -f /opt/boxen/homebrew/Cellar/ricty/3.2.2/share/fonts/Ricty*.ttf ~/Library/Fonts/; fc-cache -vf;"
   # }
+
+  homebrew::tap { 'sitespeedio/sitespeedio': }
+  homebrew::tap { 'tobli/browsertime': }
+  package { 'sitespeedio/sitespeedio/sitespeed.io': }
 }
