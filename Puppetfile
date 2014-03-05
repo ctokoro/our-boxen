@@ -123,3 +123,6 @@ github 'flux', '1.0.0'
 
 ## for rbenv plugin etc
 # github 'rbenv', '0.2.0'
+
+# Docker
+github 'docker', '1.0.1', :repo => "morgante/puppet-docker"

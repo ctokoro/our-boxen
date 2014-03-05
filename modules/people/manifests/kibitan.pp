@@ -9,6 +9,7 @@
 
 ## idont know how to install in boxen
 # lita (sqlite GUI) - its adobe AIR program
+# The SQLite Sorcerer - my SQLite admin tool http://afoucal.free.fr/index.php/applications/sqlite-sorcerer/
 
 class people::kibitan {
   include chrome
@@ -88,6 +89,15 @@ class people::kibitan {
     'GitX':
       source  => "http://frim.frim.nl/GitXStable.app.zip",
       provider => compressed_app;
+    'invisionapp':
+      source => "https://projects.invisionapp.com/native_app/mac/sparkle/InVisionSync.dmg",
+      provider => appdmg;
+    'JetProfiler':
+      source => "http://downloads.polaricon.com/downloads/installation/jpmy/3/early/JetProfiler_v3.0.10.dmg",
+      provider => appdmg;
+    'sublime_handler':
+      source => "http://asuth.com/SublHandler.app.zip",
+      provider => compressed_app;
   }
 
   # https://github.com/phinze/homebrew-cask
@@ -107,6 +117,7 @@ class people::kibitan {
       'brew-cask',
       'autossh',
       'terminal-notifier',
+      'spark',
     ]:
   }
 
@@ -138,6 +149,16 @@ class people::kibitan {
     'myth':
       node_version => 'v0.10';
   }
+
+  # package {
+  #   [
+  #     'go',
+  #   ]:
+  # }
+  # exec {
+  #   "install textql" :
+  #     command => "go get -u github.com/dinedal/textql",
+  # }
 
   # http://baqamore.hatenablog.com/entry/2013/12/21/234623
   # https://github.com/boxen/puppet-python/blob/1.3.0/manifests/pip.pp
@@ -184,4 +205,6 @@ class people::kibitan {
   homebrew::tap { 'sitespeedio/sitespeedio': }
   homebrew::tap { 'tobli/browsertime': }
   package { 'sitespeedio/sitespeedio/sitespeed.io': }
+
+  # include docker
 }
