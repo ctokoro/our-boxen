@@ -57,6 +57,9 @@ class people::kibitan {
     # 'Send to Kindle':
     #   source => 'http://s3.amazonaws.com/sendtokindle/SendToKindleForMac-installer-v1.0.0.218.pkg',
     #   provider => pkgdmg;
+    '1password':
+      source => "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac4/1Password-4.1.3.zip",
+      provider => compressed_app;
   }
 
   # for dev  
