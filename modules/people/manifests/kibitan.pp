@@ -122,8 +122,15 @@ class people::kibitan {
       'terminal-notifier',
       'spark',
       'q',
+      'go',
     ]:
   }
+
+  ## not working: use command by manual
+  # exec {
+  #   "install textql" :
+  #     command => "export CC=clang && go get -u github.com/dinedal/textql",
+  # }
 
   ruby::plugin {
     "rbenv-binstubs":
@@ -153,16 +160,6 @@ class people::kibitan {
     'myth':
       node_version => 'v0.10';
   }
-
-  # package {
-  #   [
-  #     'go',
-  #   ]:
-  # }
-  # exec {
-  #   "install textql" :
-  #     command => "go get -u github.com/dinedal/textql",
-  # }
 
   # http://baqamore.hatenablog.com/entry/2013/12/21/234623
   # https://github.com/boxen/puppet-python/blob/1.3.0/manifests/pip.pp
