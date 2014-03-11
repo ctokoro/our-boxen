@@ -121,6 +121,7 @@ class people::kibitan {
       'autossh',
       'terminal-notifier',
       'spark',
+      'q',
     ]:
   }
 
