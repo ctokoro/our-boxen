@@ -123,6 +123,7 @@ class people::kibitan {
       'spark',
       'q',
       'go',
+      'rmtrash',
     ]:
   }
 
