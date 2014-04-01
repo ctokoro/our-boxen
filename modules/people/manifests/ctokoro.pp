@@ -102,7 +102,7 @@ class people::ctokoro {
       source => "http://asuth.com/SublHandler.app.zip",
       provider => compressed_app;
     'github for mac':
-      source => "https://central.github.com/mac/latest",
+      source => "https://github-central.s3.amazonaws.com/mac/GitHub%20for%20Mac%20174.zip",
       provider => compressed_app;
   }
 
