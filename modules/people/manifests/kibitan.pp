@@ -160,6 +160,8 @@ class people::kibitan {
     # sudo devtools-terminal --install --id=leakmhneaibbdapdoienlkifomjceknl
     'myth':
       node_version => 'v0.10';
+    'pretty-diff':
+      node_version => 'v0.10';
   }
 
   # http://baqamore.hatenablog.com/entry/2013/12/21/234623
