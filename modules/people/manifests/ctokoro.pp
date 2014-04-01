@@ -11,7 +11,7 @@
 # lita (sqlite GUI) - its adobe AIR program
 # The SQLite Sorcerer - my SQLite admin tool http://afoucal.free.fr/index.php/applications/sqlite-sorcerer/
 
-class people::kibitan {
+class people::ctokoro {
   include chrome
 
   include dropbox
