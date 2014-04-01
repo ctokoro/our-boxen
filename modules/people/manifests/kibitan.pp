@@ -101,6 +101,9 @@ class people::kibitan {
     'sublime_handler':
       source => "http://asuth.com/SublHandler.app.zip",
       provider => compressed_app;
+    'github for mac':
+      source => "https://central.github.com/mac/latest",
+      provider => compressed_app;
   }
 
   # https://github.com/phinze/homebrew-cask
