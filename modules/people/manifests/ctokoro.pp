@@ -60,6 +60,9 @@ class people::ctokoro {
     '1password':
       source => "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac4/1Password-4.1.3.zip",
       provider => compressed_app;
+    'picasa':
+      source => "https://dl.google.com/photos/picasamac39.dmg",
+      provider => appdmg;
   }
 
   # for dev  
