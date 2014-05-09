@@ -21,7 +21,7 @@ class people::ctokoro {
   include keyremap4macbook
   include keyremap4macbook::login_item
   
-  include istatmenus3
+  include istatmenus4
   include clipmenu
   
   # include alfred
