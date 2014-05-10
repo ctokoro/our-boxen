@@ -171,6 +171,10 @@ class people::ctokoro {
     ## not working well in boxen.. use it in terminal
     # npm install -g devtools-terminal
     # sudo devtools-terminal --install --id=leakmhneaibbdapdoienlkifomjceknl
+    ## 2014/05/11
+    ## use this its working!
+    ### https://github.com/petethepig/devtools-terminal/issues/43#issuecomment-40764174
+    # sudo devtools-terminal --install --chromium
     'myth':
       node_version => 'v0.10';
     'pretty-diff':
