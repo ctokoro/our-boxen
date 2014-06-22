@@ -70,6 +70,10 @@ class people::ctokoro {
     'flowdock':
       source => 'https://flowdock-resources.s3.amazonaws.com/mac/Flowdock.zip',
       provider => compressed_app;
+    ## delete exif data
+    'imageoptim':
+      source => 'http://imageoptim.com/ImageOptim.tbz2',
+      provider => compressed_app;
     ## transfer app for smartphone
     'wirelesstransferapp':
       source => 'http://www.wirelesstransferapp.com/wirelesstransferapp-intel.dmg',
