@@ -70,6 +70,13 @@ class people::ctokoro {
     'flowdock':
       source => 'https://flowdock-resources.s3.amazonaws.com/mac/Flowdock.zip',
       provider => compressed_app;
+    ## transfer app for smartphone
+    'wirelesstransferapp':
+      source => 'http://www.wirelesstransferapp.com/wirelesstransferapp-intel.dmg',
+      provider => appdmg;
+    'android file transfer by usb':
+      source => 'https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg',
+      provider => appdmg;
   }
 
   # for dev  
