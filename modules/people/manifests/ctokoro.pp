@@ -81,6 +81,9 @@ class people::ctokoro {
     'android file transfer by usb':
       source => 'https://dl.google.com/dl/androidjumper/mtp/current/androidfiletransfer.dmg',
       provider => appdmg;
+    'wifimouse':
+      source => "http://wifimouse.necta.us/MouseServerMac.zip",
+      provider => compressed_app;
   }
 
   # for dev  
@@ -148,6 +151,7 @@ class people::ctokoro {
       'q',
       'go',
       'rmtrash',
+      # 'the_silver_searcher',
     ]:
   }
 
