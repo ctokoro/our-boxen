@@ -84,6 +84,18 @@ class people::ctokoro {
     'wifimouse':
       source => "http://wifimouse.necta.us/MouseServerMac.zip",
       provider => compressed_app;
+    'VMLite Android':
+      source => "http://www.vmlite.com/vaac/mac/VMLiteAndroidAppController.dmg",
+      provider => appdmg;
+    'chromecast':
+      source => "https://dl.google.com/chromecast/setup/mac/chromecast-setup.1.5.0.531.dmg",
+      provider => appdmg;
+    'HandBrake iphone movie encoder':
+      source => "http://downloads.sourceforge.net/project/handbrake/0.9.9/HandBrake-0.9.9-MacOSX.6_GUI_x86_64.dmg?r=&ts=1412521077&use_mirror=cznic",
+      provider => appdmg;
+    'zimly streamer':
+      source => "http://zim.ly/download_mac",
+      provider => compressed_app;      
   }
 
   # for dev  
@@ -152,6 +164,7 @@ class people::ctokoro {
       'go',
       'rmtrash',
       # 'the_silver_searcher',
+      'ghi', # github issues
     ]:
   }
 
