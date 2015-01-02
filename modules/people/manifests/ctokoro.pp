@@ -20,10 +20,10 @@ class people::ctokoro {
 
   include keyremap4macbook
   include keyremap4macbook::login_item
-  
+
   include istatmenus4
   include clipmenu
-  
+
   # include alfred
   # include libreoffice
   # class { 'libreoffice::languagepack':
@@ -95,10 +95,25 @@ class people::ctokoro {
       provider => appdmg;
     'zimly streamer':
       source => "http://zim.ly/download_mac",
-      provider => compressed_app;      
+      provider => compressed_app;
+    'github notification reader':
+      source => "https://github.com/azu/github-reader/releases/download/1.1.3/github-reader-osx.zip",
+      provider => compressed_app;
+    'github notification':
+      source => "https://github.com/downloads/miyagawa/github-growler/Github-Growler-v2.1.4.zip",
+      provider => compressed_app;
+    'f.flux':
+      source => "https://justgetflux.com/dlmac.html",
+      provider => compressed_app;
+    'bracket adobe js debugger':
+      source => "https://github.com/adobe/brackets/releases/download/release-1.0%2Beb4/Brackets.1.0.Extract.dmg",
+      provider => appdmg;
+    'wireshark packet watcher':
+      source => "https://1.as.dl.wireshark.org/osx/Wireshark%201.12.2%20Intel%2064.dmg",
+      provider => appdmg;
   }
 
-  # for dev  
+  # for dev
   # packages
   include chrome::canary
   include iterm2::stable
